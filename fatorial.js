@@ -1,4 +1,4 @@
-const prompt = require('prompt-sync')();
+const prompt = require('prompt-sync')({ sigint: true });
 
 function fatorial(num) {
     if (isNaN(num) || num < 0) {
@@ -10,9 +10,9 @@ function fatorial(num) {
         }
         return fat;
     }
-
-    let numero = prompt('Insira o número que será calculado o fatorial? ');
-    fatorial(numero);
-
-    console.log(`O fatorial de ${numero} é ${fat}.`);
 }
+let numero = prompt('Insira o número que será calculado o fatorial? ');
+
+fat = fatorial(numero);
+
+console.log(`O fatorial de ${numero} é ${fat}.`);
